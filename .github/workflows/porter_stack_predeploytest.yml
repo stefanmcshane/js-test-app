@@ -1,0 +1,25 @@
+"on":
+  push:
+    branches:
+    - master
+name: Deploy to Porter
+jobs:
+  porter-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Set Github tag
+      id: vars
+      run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+      - name: Deploy stack
+        timeout-minutes: 30
+        run: |
+          ./porter-cli apply -f porter.yaml
+      env:
+        PORTER_CLUSTER: "1"
+        PORTER_HOST: https://1ef6-160-72-72-58.ngrok-free.app
+        PORTER_PROJECT: "1"
+        PORTER_STACK_NAME: predeploytest
+        PORTER_TAG: ${{ steps.vars.outputs.sha_short }}
+        PORTER_TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIxNjgyNzE3MDExIiwiaWJ5IjoxLCJwcm9qZWN0X2lkIjoxLCJzZWNyZXQiOiJmNWUzOWQ5YTg4NTUyZTYyYzNmYmQxOGJhOWI1NGNjOCIsInN1YiI6ImFwaSIsInN1Yl9raW5kIjoiYXBpIiwidG9rZW5faWQiOiI2NDBiMTFhMDI0MTMzZmY4Yzg2MjQwZTlmNDM0MjljZiJ9.7RcxRwLoScGWZv2oYnHBfdbXDHKkrWlL6LgMdqx42YE
