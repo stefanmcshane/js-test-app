@@ -12,11 +12,10 @@ jobs:
     - name: Set Github tag
       id: vars
       run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-    - name: Deploy stack
-      timeout-minutes: 30
-      uses: porter-dev/porter-cli-action@v0.1.0
-      with:
-        command: apply -f porter.yaml
+      - name: Deploy stack
+        timeout-minutes: 30
+        run: |
+          ./porter-cli apply -f porter.yaml
       env:
         PORTER_CLUSTER: "1"
         PORTER_HOST: https://1ef6-160-72-72-58.ngrok-free.app
