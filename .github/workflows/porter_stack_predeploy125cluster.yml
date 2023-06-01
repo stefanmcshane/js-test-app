@@ -19,7 +19,7 @@ jobs:
         command: apply -f porter.yaml
       env:
         PORTER_CLUSTER: "12"
-        PORTER_HOST: https://23f1-2600-4041-5000-8c00-355a-fdd-f0b4-4c02.ngrok-free.app
+        PORTER_HOST: https://731b-160-72-72-58.ngrok-free.app
         PORTER_PROJECT: "2"
         PORTER_STACK_NAME: predeploy125cluster
         PORTER_TAG: ${{ steps.vars.outputs.sha_short }}
