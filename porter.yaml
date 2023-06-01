@@ -1,0 +1,11 @@
+apps:
+  my-app-web:
+    run: "node index.js"
+
+release:
+  run: "echo hello stefan"
+  config:
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
