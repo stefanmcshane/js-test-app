@@ -1,6 +1,6 @@
 apps:
   my-app-web:
-    run: "/bin/sh -c 'exit 9'"
+    run: "/bin/sh -c 'exit 3'"
 
 release:
   run: "echo hello stefan"
