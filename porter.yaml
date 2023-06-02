@@ -1,6 +1,6 @@
 apps:
   my-app-web:
-    run: "node index.js"
+    run: "/bin/sh -c 'exit 9'"
 
 release:
   run: "echo hello stefan"
