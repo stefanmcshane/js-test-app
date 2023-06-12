@@ -1,6 +1,7 @@
 FROM node:latest
 ARG SPONSOR
 RUN echo sponsor=$SPONSOR
+RUN echo TESTING_ENV=$TESTING_ENV
 
 # Development environment
 # -----------------------
