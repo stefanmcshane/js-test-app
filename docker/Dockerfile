@@ -1,15 +1,18 @@
+FROM node:latest
+ARG SPONSOR
+RUN echo sponsor=$SPONSOR
+
 # Development environment
 # -----------------------
-FROM node:latest
-WORKDIR /webpack
+# FROM node:latest
+# WORKDIR /webpack
 
-COPY package*.json ./
+# COPY package*.json ./
 
-RUN npm install
+# RUN npm install
 
-ENV NODE_ENV=development
-ARG SPONSOR
+# ENV NODE_ENV=development
 
-COPY . ./
+# COPY . ./
 
-CMD node index.js
+# CMD node index.js
