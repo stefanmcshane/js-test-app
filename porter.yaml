@@ -2,6 +2,11 @@ apps:
   my-app-web:
     run: "/bin/sh -c 'exit 3'"
 
+build:
+  env:
+    raw:
+      TESTING_ENV: working
+
 release:
   run: "echo hello stefan"
   config:
