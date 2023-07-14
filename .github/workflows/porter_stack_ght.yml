@@ -23,3 +23,4 @@ jobs:
         PORTER_PROJECT: "10"
         PORTER_STACK_NAME: ght
         PORTER_TAG: ${{ steps.vars.outputs.sha_short }}
+        PORTER_TOKEN: ${{ secrets.PORTER_STACK_10_3 }}
