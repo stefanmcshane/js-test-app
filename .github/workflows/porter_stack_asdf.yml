@@ -16,7 +16,7 @@ jobs:
       timeout-minutes: 30
       uses: porter-dev/porter-cli-action@v0.1.0
       with:
-        command: apply -f ./porter.yaml
+        command: apply
       env:
         PORTER_CLUSTER: "1"
         PORTER_HOST: https://21db-160-72-72-58.ngrok-free.app
