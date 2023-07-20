@@ -9,11 +9,3 @@ build:
   env:
     raw:
       TESTING_ENV: working
-
-release:
-  run: "echo hello stefan"
-  config:
-    resources:
-      requests:
-        cpu: 100m
-        memory: 128Mi
