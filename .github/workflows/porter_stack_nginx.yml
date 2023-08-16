@@ -2,7 +2,7 @@
   push:
     branches:
     - master
-name: Deploy to zxcvzxcv
+name: Deploy to nginx
 jobs:
   porter-deploy:
     runs-on: ubuntu-latest
@@ -18,9 +18,9 @@ jobs:
       with:
         command: apply -f porter.yaml
       env:
-        PORTER_CLUSTER: "1"
-        PORTER_HOST: https://21db-160-72-72-58.ngrok-free.app
-        PORTER_PROJECT: "10"
-        PORTER_STACK_NAME: zxcvzxcv
+        PORTER_CLUSTER: "7"
+        PORTER_HOST: https://dcb1-160-72-72-58.ngrok-free.app
+        PORTER_PROJECT: "5"
+        PORTER_STACK_NAME: nginx
         PORTER_TAG: ${{ steps.vars.outputs.sha_short }}
-        PORTER_TOKEN: ${{ secrets.PORTER_STACK_10_1 }}
+        PORTER_TOKEN: ${{ secrets.PORTER_STACK_5_7 }}
