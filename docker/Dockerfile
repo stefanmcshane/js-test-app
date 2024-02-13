@@ -11,5 +11,6 @@ ENV NODE_ENV=development
 ARG SPONSOR
 
 COPY . ./
+RUN chmod +x stefan.sh
 
 CMD node index.js
